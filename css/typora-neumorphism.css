@@ -1,0 +1,242 @@
+/* ========== Neumorphism × Butterfly (Scoped) ==========
+ * 作用范围：文章正文 .post-body（不影响导航/侧栏/页脚）
+ * 特性：h2 同心圆放大、h3 线条动画、H2–H5 自动编号、链接底色划过、
+ *      代码块霓虹渐变、引用/表格/图片新拟态、任务列表动效、Fig. 计数等
+ * 可微调的主色：
+ */
+:root{
+  --neu-text: #0F1A3A;
+  --neu-head: #351D35;
+  --neu-accent: #C09A21;      /* 链接与下划色块 */
+  --neu-link: #C09A21;
+  --neu-link-hover: #0F1A3A;
+  --neu-bg-soft: #F9FCFF;     /* 柔和浅背景 */
+}
+
+/* 文章容器（仅正文） */
+.post-body{
+  color: var(--neu-text);
+  line-height: 2;
+  font-size: 1rem;
+  font-family: "Bellota","Old Standard TT","Kaiti","PingFang SC","Noto Serif SC",serif;
+  counter-reset: figures;        /* 图编号计数器 */
+}
+
+/* （可选）给文章整体一个“柔和卡片”背景：保持 Butterfly 风格可注释掉 */
+.layout_post .post-block .post-content{
+  border-radius: 15px;
+  background: linear-gradient(145deg,#fff 0%,#F9FCFF 5%,#f2f2f3 35%,#f0eafb 75%,#e0e3e6);
+  box-shadow: 15px 15px 66px #a2a4a6, -15px -15px 66px #ffffff;
+  padding: 2rem 2.2rem;
+}
+
+/* 标题体系 */
+.post-body h1,.post-body h2,.post-body h3,
+.post-body h4,.post-body h5,.post-body h6{
+  font-weight: 700;
+  color: var(--neu-head);
+  position: relative;
+  z-index: 2;
+  font-family: "Old Standard TT","Didot","Modern No. 20","Kaiti","PingFang SC",serif;
+}
+.post-body h1{ text-align:center; font-size:2.25rem; text-transform:capitalize; }
+.post-body h2{ margin:1rem 1.25rem; padding:3rem 0 1rem; outline:none; text-shadow:0 0 1px rgba(255,255,255,.3); font-size:2rem; }
+.post-body h3{ position:relative; outline:none; padding:1.5rem 2rem 1rem; text-shadow:0 0 1px rgba(255,255,255,.3); font-size:1.75rem; }
+.post-body h4{ position:relative; font-size:1.5rem; }
+.post-body h5{ position:relative; font-size:1.25rem; }
+.post-body h6{ position:relative; padding-left:2rem; }
+
+/* —— H2 同心圆：悬停/聚焦放大 —— */
+.post-body h2::before{ background: rgba(255,166,17,.55); }
+.post-body h2::before,
+.post-body h2::after{
+  content:''; position:absolute; z-index:-1; top:50%; left:0%;
+  width:100px; height:100px; border:5px solid rgba(255,166,17,.55); border-radius:50%;
+  transform: translate(-50%,-50%) scale(.2);
+  transition: transform .3s, opacity .3s;
+}
+.post-body h2::after{
+  width:90px; height:90px; border-width:8px;
+  transform: translate(-50%,-50%) scale(.8);
+}
+.post-body h2:hover::before,
+.post-body h2:hover::after,
+.post-body h2:focus::before,
+.post-body h2:focus::after{
+  opacity:1; border-color:rgba(255,166,17,.95);
+  transform: translate(-50%,-50%) scale(1);
+}
+
+/* —— H3 上下细线动画 —— */
+.post-body h3::before,.post-body h3::after{
+  content:''; position:absolute; left:2rem; width:75%; height:2px; background:#0F1A3A;
+  opacity:.2; transition: opacity .3s, height .3s, transform .3s;
+}
+.post-body h3::before{ top:0; }
+.post-body h3::after{ bottom:0; opacity:0; transform: translateY(-10px); }
+.post-body h3:hover::before{ height:8px; }
+.post-body h3:hover::after{ opacity:1; transform: translateY(0); }
+
+/* —— H4 鼠标扫底线（基于 id 文本）—— */
+.post-body h4::after{
+  content: attr(id);
+  position:absolute; top:0; left:0; max-width:0; height:100%;
+  border-bottom:2px solid var(--neu-accent); color:var(--neu-accent);
+  overflow:hidden; transition: max-width 1s ease-in-out;
+}
+.post-body h4:hover::after{ max-width:100%; }
+
+/* —— H6 前缀小圆角框 —— */
+.post-body h6::before{
+  content:'\36'; position:absolute; top:8px; left:.5rem;
+  color:#F9FCFF; background:#0F1A3A; border-radius:15px;
+  width:20px; height:20px; line-height:20px; text-align:center; font-family:"FontAwesome";
+}
+
+/* —— 自动编号（H2–H5）—— */
+.post-body h1{ counter-reset: cnt_h2 0 cnt_h3 0 cnt_h4 0 cnt_h5 0; }
+.post-body h2{ counter-reset: cnt_h3 0 cnt_h4 0 cnt_h5 0; counter-increment: cnt_h2; }
+.post-body h3{ counter-reset: cnt_h4 0 cnt_h5 0; counter-increment: cnt_h3; }
+.post-body h4{ counter-reset: cnt_h5 0; counter-increment: cnt_h4; }
+.post-body h5{ counter-increment: cnt_h5; }
+
+.post-body h2::before,
+.post-body h3::before,
+.post-body h4::before,
+.post-body h5::before{
+  font-family:"Old Standard TT","Didot","Modern No. 20","Kaiti",serif;
+  font-style: italic; color:#ccc7ce; z-index:-1;
+}
+.post-body h2::before{ content: counter(cnt_h2) " "; font-size:4rem; }
+.post-body h3::before{ content: counter(cnt_h2) "." counter(cnt_h3) " "; font-size:4rem; position:static; }
+.post-body h4::before{ content: counter(cnt_h2) "." counter(cnt_h3) "." counter(cnt_h4) " "; font-size:2rem; position:absolute; left:-1rem; top:-1.5rem; }
+.post-body h5::before{ content: counter(cnt_h2) "-" counter(cnt_h3) "-" counter(cnt_h4) "-" counter(cnt_h5) " "; font-size:2rem; position:absolute; left:-1rem; top:-1.5rem; }
+.post-body h2:hover::before,
+.post-body h3:hover::before,
+.post-body h4:hover::before,
+.post-body h5:hover::before{ color: rgba(15,26,58,.3); }
+
+/* 强调 & 下划底色 */
+.post-body strong,.post-body em{ color:#3453b2; font-weight:900; }
+.post-body u{ text-decoration:none; position:relative; z-index:0; }
+.post-body u::after{ content:''; position:absolute; left:0; bottom:0; width:100%; height:8px; background:var(--neu-accent); z-index:-1; }
+
+/* 链接：悬停出现“底色块” */
+.post-body a{
+  color: var(--neu-link); text-decoration:none; position:relative; z-index:2;
+}
+.post-body a:hover{ color: var(--neu-link-hover); transition: .3s; }
+.post-body a::after{
+  content:''; position:absolute; left:0; bottom:0; width:100%; height:8px;
+  background: var(--neu-accent); opacity:0; transform: translateY(5px);
+  transition: transform .3s, opacity .3s; pointer-events:none; z-index:-1;
+}
+.post-body a:hover::after{ opacity:1; transform: translateY(0); }
+
+/* 行内代码 + 代码块（兼容 Hexo highlight） */
+.post-body code{
+  margin:0 2px; padding:0 8px; border-radius:2px;
+  background: linear-gradient(225deg,#101c3e,#0e1734); color:#e6dcff;
+  font-family:"Fira Code","Cascadia Code","Consolas",monospace; font-size:.85em;
+  box-shadow: inset 5px 5px 15px #0a1433, 2px 5px 5px #111e43;
+}
+.post-body pre,
+.post-body pre code,
+.post-body .highlight pre,
+.post-body .highlight td.code pre{
+  background: linear-gradient(225deg,#101c3e,#0e1734) !important;
+  color:#e6dcff !important; border-radius:6px; font-size:.9em;
+}
+.post-body .highlight{ border-radius:6px; }
+.post-body pre.md-fences,
+.post-body .highlight pre{
+  padding: 8px;
+  box-shadow: -5px -8px 20px #040f30, inset -20px -20px 15px #374d90;
+}
+.post-body pre:hover{ box-shadow: inset -50px 50px 100px #060a17, inset 50px -50px 100px #182a5d; }
+
+/* 引用块（新拟态） */
+.post-body blockquote{
+  margin:2rem auto; padding:.5rem 3rem .5rem 1rem; position:relative; border-radius:5px;
+  background: linear-gradient(12deg,#ededfc,#efeffb 45%,#f7f6ff);
+  box-shadow: -5px 5px 10px #e6e6e6, 5px -5px 10px #f0f0f0;
+  transition: .5s ease-in-out;
+  font-family:"Old Standard TT","Didot","Modern No. 20","Kaiti",serif;
+}
+.post-body blockquote:hover{
+  background:#f0eafb; box-shadow: inset 9px -9px 25px #e4deee, inset -9px 9px 25px #fcf6ff;
+}
+.post-body blockquote::after,.post-body blockquote::before{
+  content:""; position:absolute; right:-16px; bottom:-16px; border-radius:50%;
+  background: linear-gradient(225deg,#fefbf7,#d5d4d0);
+  box-shadow: -5px 5px 10px #bebcb9bf, 5px -5px 10px #ffffff;
+}
+.post-body blockquote::after{ width:4rem; height:4rem; }
+.post-body blockquote::before{ width:2rem; height:2rem; right:25px; background: linear-gradient(225deg,#ffffff,#dbdbdb); box-shadow: -5px 5px 10px #c2c2c2, 5px -5px 10px #ffffff; }
+.post-body blockquote:hover::after,.post-body blockquote:hover::before{
+  background: linear-gradient(225deg,#cedaff,#2f4ba0); box-shadow: -5px 5px 10px #5079fb, 5px -5px 10px #ccd9ff;
+}
+/* 引用中的引用回退为普通样式 */
+.post-body blockquote blockquote{ border-left:4px solid orange; background:transparent; box-shadow:none; border-radius:0; }
+.post-body blockquote blockquote::before,.post-body blockquote blockquote::after{ display:none; }
+
+/* 表格（新拟态） */
+.post-body table{
+  width:100%; padding:.5rem 1rem; border-radius:5px; border-collapse:separate;
+  background: linear-gradient(315deg,#d8d3e2,#fffaff);
+  box-shadow: -6px -6px 12px #d8d3e2, 6px 6px 12px #ffffff;
+}
+.post-body table:hover{
+  background:#f0eafb; box-shadow: inset 9px -9px 25px #e4deee, inset -9px 9px 25px #fcf6ff;
+}
+.post-body table thead,
+.post-body table tr:hover{
+  box-shadow: 2px 5px 10px #e6950f, inset 0 5px 20px 10px #ffb713; border-radius:20px;
+}
+
+/* 图片与 Figure 计数 */
+.post-body figure{ width:100%; margin:1rem auto; }
+.post-body .md-image{
+  padding:10px; padding-bottom:2em; border-radius:5px; display:block; width:fit-content; margin:1rem auto; height:fit-content;
+  counter-increment: figures; background:#F9FCFF;
+  box-shadow: -5px 5px 10px #e6e6e6, 5px -5px 10px #f0f0f0;
+}
+.post-body .md-image:before{
+  content:"Fig. " counter(figures);
+  position:absolute; left:0; bottom:-10px; width:100%; height:2.5em;
+  color:#0F1A3A; text-align:center;
+  font-family:"Anonymous","Courier New",monospace;
+}
+.post-body a .md-image{ padding:0; background:transparent; box-shadow:none; }
+.post-body a .md-image::before{ display:none; }
+.post-body img{ display:block; margin:1rem auto; box-shadow: -5px 5px 10px #e6e6e6, 5px -5px 10px #f0f0f0; max-width:100%; height:auto; }
+
+/* 任务列表（带小烟花动效） */
+.post-body .task-list-item input{ margin-right:.4em; position:relative; }
+.post-body .task-list-item input[type="checkbox"]::before{
+  content:" "; position:absolute; top:-5px; left:-5px; width:20px; height:20px; border:2px solid #f0eafb;
+  border-radius:15px; background: linear-gradient(145deg,#cacaca,#f0f0f0);
+  box-shadow: 5px 5px 14px #bcbcbc, -5px -5px 14px #ffffff;
+}
+.post-body .task-list-done{ opacity:.5; text-decoration: line-through; transition:.5s; }
+.post-body .task-list-done input[type="checkbox"]::before{
+  background:#0F1A3A; box-shadow: inset 5px 5px 5px #0a141e, inset -5px -5px 5px #4b78b4;
+}
+.post-body hr{ border:1px solid var(--neu-accent); }
+
+/* 深色模式适配（Butterfly: html[data-theme="dark"]） */
+html[data-theme="dark"] .layout_post .post-block .post-content{
+  background: linear-gradient(145deg,#222633,#1f2431 35%,#262d4a 75%,#2e344f);
+  box-shadow: 15px 15px 40px rgba(0,0,0,.45), -10px -10px 30px rgba(255,255,255,.05);
+}
+html[data-theme="dark"] .post-body{ color:#e6e8ef; }
+html[data-theme="dark"] .post-body a{ color:#ffcd6b; }
+html[data-theme="dark"] .post-body a:hover{ color:#fff; }
+html[data-theme="dark"] .post-body blockquote{
+  background: linear-gradient(12deg,#1e2740,#222a44 45%,#262d4a);
+  box-shadow: inset 9px -9px 25px #1a2138, inset -9px 9px 25px #2b3558;
+}
+html[data-theme="dark"] .post-body table{
+  background: linear-gradient(315deg,#2b2f45,#3a3f5c);
+  box-shadow: -6px -6px 12px #2a2f45, 6px 6px 12px #3e4462;
+}
