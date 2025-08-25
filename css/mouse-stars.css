@@ -1,0 +1,9 @@
+/* 跟随鼠标的星星画布：铺满视口、不拦截点击 */
+#mouse-stars{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 4;  /* 建议层级：正文(5) > 鼠标星星(4) > 星空(3) > 封面遮罩(2) */
+}

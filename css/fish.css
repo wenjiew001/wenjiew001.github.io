@@ -1,0 +1,8 @@
+.fish-container{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 200px;              /* 自行调高低 */
+  pointer-events: none;       /* 不拦截点击 */
+  z-index: 4;                 /* 建议：正文(5) > 鱼(4) > 星空(3) > 遮罩(2) */
+  opacity: .50;               /* 透明度自行调 */
+}

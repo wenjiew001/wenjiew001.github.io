@@ -1,0 +1,12 @@
+#universe{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;            /* 不要用 -1 */
+}
+#web_bg, .full_page, .main, #content-inner{
+  position: relative;
+  z-index: 1;            /* 正文在画布上面 */
+}

@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Github美化过程记录 | Wenjie Wang</title><meta name="author" content="Wenjie Wang"><meta name="copyright" content="Wenjie Wang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Github美化过程记录 最后的效果可以参考我的Github主页： wenjiew-astro (Wenjie Wang)  有很多很好的教程分享了自己的美化之路，我是个懒狗，所以就直接 Copy &amp; Paste，然后 改改改 就成了我自己的主页了，下面是我参考的最主要的教程来源：  (99+ 封私信 &#x2F; 80 条消息) Github 首页美化教程（一）：打造个性化的GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github美化过程记录">
+<meta property="og:url" content="https://wenjiew-astro.github.io/2025/08/22/Github%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Wenjie Wang">
+<meta property="og:description" content="Github美化过程记录 最后的效果可以参考我的Github主页： wenjiew-astro (Wenjie Wang)  有很多很好的教程分享了自己的美化之路，我是个懒狗，所以就直接 Copy &amp; Paste，然后 改改改 就成了我自己的主页了，下面是我参考的最主要的教程来源：  (99+ 封私信 &#x2F; 80 条消息) Github 首页美化教程（一）：打造个性化的GitHub">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wenjiew-astro.github.io/img/cover/17226422133902720.jpg">
+<meta property="article:published_time" content="2025-08-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-22T16:01:32.000Z">
+<meta property="article:author" content="Wenjie Wang">
+<meta property="article:tag" content="Github主页">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wenjiew-astro.github.io/img/cover/17226422133902720.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Github美化过程记录",
+  "url": "https://wenjiew-astro.github.io/2025/08/22/Github%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/",
+  "image": "https://wenjiew-astro.github.io/img/cover/17226422133902720.jpg",
+  "datePublished": "2025-08-21T16:00:00.000Z",
+  "dateModified": "2025-08-22T16:01:32.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Wenjie Wang",
+      "url": "https://wenjiew-astro.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/20250713102251.jpg"><link rel="canonical" href="https://wenjiew-astro.github.io/2025/08/22/Github%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Github美化过程记录',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><script>
+(function () {
+  const html = document.documentElement
+  try {
+    const store = localStorage.getItem('theme')
+    // 只有当用户没手动切换过主题时，才跟随系统
+    if (!store) {
+      const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      html.setAttribute('data-theme', dark ? 'dark' : 'light')
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem('theme')) {
+          html.setAttribute('data-theme', e.matches ? 'dark' : 'light')
+        }
+      })
+    }
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/xxx.css"><link rel="stylesheet" href="/css/mouse-stars.css"><link rel="stylesheet" href="/css/maoboli.css"><link rel="stylesheet" href="/css/fish.css"><link rel="stylesheet" href="/css/butterfly-typora-look-v8.1.hover.css"><link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap/4.6.2/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><style>
+  .gallery-index, .ImageGrid { width: min(1200px, calc(100% - 32px)); margin: 12px auto 24px; }
+  .post-block:has(#galleryIndex){ background:transparent!important; box-shadow:none!important; padding:0!important; }
+  .post-title:has(+ .post-content #galleryIndex),
+  .post-meta:has(+ .post-content #galleryIndex),
+  .post-content:has(#galleryIndex) > *:not(#galleryIntro):not(#galleryIndex){ display:none!important; }
+
+  /* 引言样式 */
+  .gallery-intro{
+    width: min(1200px, calc(100% - 32px));
+    margin: 12px auto 16px;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+    opacity: .9;
+    border: 1px dashed rgba(255,255,255,.25);
+    border-radius: 12px;
+  }
+
+  .gallery-index{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:22px; }
+  .gcard{ width:240px; cursor:pointer; user-select:none; transform-origin:50% 80%;
+          transition:transform .25s ease, filter .25s ease; filter:drop-shadow(0 10px 20px rgba(0,0,0,.18)); text-decoration:none; }
+  .gcard:hover{ transform:rotate(0deg) translateY(-6px) scale(1.02); filter:drop-shadow(0 14px 28px rgba(0,0,0,.22)); }
+  .gimg{ width:100%; height:150px; border-radius:12px; overflow:hidden; background:#111; }
+  .gimg img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .gmeta{ text-align:center; margin-top:8px; line-height:1.25; color:inherit; }
+  .gtitle{ font-weight:700; }
+  .gsub{ font-size:12px; opacity:.75; margin-top:4px; }
+  .tilt-1{ transform:rotate(-4deg) } .tilt-2{ transform:rotate(-2.5deg) }
+  .tilt-3{ transform:rotate(-1.5deg) } .tilt-4{ transform:rotate(1.5deg) }
+  .tilt-5{ transform:rotate(2.5deg) }  .tilt-6{ transform:rotate(4deg) }
+
+  .card{ border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.08) }
+  .ImageInCard{ overflow:hidden; border-radius:14px }
+  .card img{ width:100%; height:100%; object-fit:cover; display:block }
+  .gallery-title{ width:min(1200px, calc(100% - 32px)); margin:16px auto 8px; font-weight:700; font-size:20px; }
+  /* 用伪元素显示我们设置的标题；把原文字隐藏掉 */
+  #page-header .dyn-title{ color: transparent !important; position: relative; }
+  #page-header .dyn-title::after{
+    content: attr(data-group);   /* 读取元素属性 data-group 作为标题 */
+    color: inherit;
+    position: absolute;
+    left: 0; top: 0;
+  }
+
+  /* 仅在相册封面页隐藏评论（giscus / 评论块） */
+  .post-block:has(#galleryIndex) #post-comment,
+  .post-block:has(#galleryIndex) .giscus{ display:none!important; }
+</style>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Wenjie Wang" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/20250713102251.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-brands fa-reddit"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/cover/17226422133902720.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Wenjie Wang</span></a><a class="nav-page-title" href="/"><span class="site-name">Github美化过程记录</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-brands fa-reddit"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Github美化过程记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-08-21T16:00:00.000Z" title="发表于 2025-08-22 00:00:00">2025-08-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-22T16:01:32.000Z" title="更新于 2025-08-23 00:01:32">2025-08-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/Github/">Github</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="Github美化过程记录"><a href="#Github美化过程记录" class="headerlink" title="Github美化过程记录"></a>Github美化过程记录</h1><blockquote>
+<p>最后的效果可以参考我的Github主页：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro">wenjiew-astro (Wenjie Wang)</a></p>
+</blockquote>
+<p>有很多很好的教程分享了自己的美化之路，我是个懒狗，所以就直接 <strong>Copy &amp; Paste</strong>，然后 <strong>改改改</strong> 就成了我自己的主页了，下面是我参考的最主要的教程来源：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/454597068">(99+ 封私信 &#x2F; 80 条消息) Github 首页美化教程（一）：打造个性化的GitHub首页 - 知乎</a></p>
+</blockquote>
+<p>当然了，还有很多很好的教程。如</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/PeterJXL/p/18437094">超详细的 GitHub 个人主页美化教程 - peterjxl - 博客园</a></p>
+</blockquote>
+<p>我这里就主要记录我自己的修改过程。</p>
+<blockquote>
+<p>Tips</p>
+<p>你可以直接复制我的仓库，然后按照我的方法，就可以很容易构建你自己的主页了！</p>
+<p>Have a nice day !!</p>
+</blockquote>
+<h2 id="1-首先要找到一个我们喜欢的主页"><a href="#1-首先要找到一个我们喜欢的主页" class="headerlink" title="1.首先要找到一个我们喜欢的主页"></a>1.首先要找到一个我们喜欢的主页</h2><p>因为我们不是自己做主页，所以第一要务就是要找到一个我们<strong>心仪</strong>的主页，然后”参考“一下（你懂我的意思吧）。这里我的来源是孙同学的主页 <a target="_blank" rel="noopener" href="https://github.com/sun0225SUN/">sun0225SUN (Guoqi Sun)</a>。</p>
+<p>找到之后，其实我们有两种方式，第一种就是直接克隆他的仓库，因为这个主页要求仓库的名字和用户的名字相同才会显示，所以在克隆的时候我们把仓库的名字改成我们自己的用户名就可以了。还有一种，就是把这个仓库下载下来，然后我们自己新建一个与用户名同名的仓库，使用电脑的git或者Github Desktop软件把这个代码推到我们刚刚建立的仓库里面去。</p>
+<blockquote>
+<p>注意要先打开仓库权限</p>
+<ul>
+<li>仓库 <strong>Settings → Actions → General → Workflow permissions</strong></li>
+<li>选 <strong>Read and write permissions</strong></li>
+<li>如果看到 “Allow GitHub Actions to create and approve pull requests”，也勾上</li>
+</ul>
+</blockquote>
+<p>这里我推荐第二种，但其实第一种也没有任何问题。</p>
+<p>之后我们只需要去改 <strong>README.md</strong> 这个文件内容就可以了，文件里面写了很多的注释，我相信你很容易就能看懂，下面我主要写一些我自己配置过程中的问题。</p>
+<h2 id="配置过程中我遇到的问题-—-token问题"><a href="#配置过程中我遇到的问题-—-token问题" class="headerlink" title="配置过程中我遇到的问题 — token问题"></a>配置过程中我遇到的问题 — token问题</h2><p>这个问题是最头疼的问题了，修改过程中最麻烦的就是每一个插件都需要一个权限，这个权限主要是用来给自己建的那些action让它去自动更新我们的这个 <strong>README.md</strong> 文件。因此下面我就把所有需要用到的权限一次性列出来：</p>
+<h3 id="WakaTime-Token"><a href="#WakaTime-Token" class="headerlink" title="WakaTime Token"></a>WakaTime Token</h3><p>这个主要作用是用来记录我们的编程时间的，官网是 <a target="_blank" rel="noopener" href="https://wakatime.com/dashboard">Dashboard - WakaTime</a> 。</p>
+<p>我们需要在官网注册一个账户，然后在设置里面找到 <strong>Edit profile</strong> ，在这里面该我们的<strong>名字</strong>和<strong>用户名</strong>。</p>
+<blockquote>
+<p>注意，这里的用户名就是你真正需要写到 <strong>README.md</strong> 中的名字</p>
+</blockquote>
+<p>之后，在设置里面你会看到 <strong>account</strong> 里面有 <strong>Secret API Key</strong> ，这个记住他，我们有两个地方需要用到：</p>
+<h4 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h4><ol>
+<li><p>先拿到你的 <strong>WAKATIME_API_KEY</strong></p>
+<ul>
+<li><p>登录 <a target="_blank" rel="noopener" href="https://wakatime.com/">WakaTime</a></p>
+</li>
+<li><p>右上角头像 → <strong>Settings → API Key</strong></p>
+</li>
+<li><p>会看到一串很长的 key（类似 <code>1234abcd-xxxx-xxxx-xxxx-abcdef123456</code>）</p>
+</li>
+<li><p>复制下来备用</p>
+</li>
+</ul>
+</li>
+<li><p>在 GitHub 仓库里添加 <strong>Secrets</strong></p>
+<ul>
+<li><p>打开你的仓库 → 点上方菜单里的 <strong>Settings</strong></p>
+</li>
+<li><p>左边栏找到 <strong>Secrets and variables → Actions</strong></p>
+</li>
+<li><p>点 <strong>New repository secret</strong></p>
+</li>
+<li><p>Name 填：<code>WAKATIME_API_KEY</code></p>
+</li>
+<li><p>Value 填：刚才复制的那串 key</p>
+</li>
+<li><p>保存</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="你的代码编辑器"><a href="#你的代码编辑器" class="headerlink" title="你的代码编辑器"></a>你的代码编辑器</h4><ul>
+<li>在你的编辑器（VS Code、PyCharm 等）里安装 WakaTime 插件。</li>
+<li>输入你的 API Key（在 WakaTime Settings → API Key）。</li>
+<li>正常写点代码，至少运行几个小时，产生实际的编码时间数据。</li>
+<li>等一天（WakaTime 的 public profile 只显示“过去的天数”，新账号当天是不会展示的）。</li>
+</ul>
+<h3 id="各种Action的Token"><a href="#各种Action的Token" class="headerlink" title="各种Action的Token"></a>各种Action的Token</h3><p>.github&#x2F;workflows 里面总共有六个Action：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro/wenjiew-astro/blob/main/.github/workflows/blog.yml">blog.yml</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro/wenjiew-astro/blob/main/.github/workflows/contrib.yml">contrib.yml</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro/wenjiew-astro/blob/main/.github/workflows/fork_star.yml">fork_star.yml</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro/wenjiew-astro/blob/main/.github/workflows/metrics.yml">metrics.yml</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro/wenjiew-astro/blob/main/.github/workflows/snake.yml">snake.yml</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro/wenjiew-astro/blob/main/.github/workflows/waka.yml">waka.yml</a></li>
+</ol>
+<p>每一个Action他们需要的Token都不一样。虽然我们可以定义同一个api_key，但是Token的名字却不尽相同。（这里也就是我为什么推荐你用第一种方式，因为如果用第二种的话，可能还需要改更多的内容）</p>
+<p>下面我写一下需要做的事情：</p>
+<h4 id="生成-PAT"><a href="#生成-PAT" class="headerlink" title="生成 PAT"></a><strong>生成 PAT</strong></h4><ul>
+<li>去 GitHub → Settings → Developer settings → <strong>Personal access tokens → Tokens (classic)</strong></li>
+<li>点击「Generate new token (classic)」</li>
+<li>勾选最少的权限：<ul>
+<li><code>repo</code></li>
+<li><code>read:user</code></li>
+<li><code>read:org</code>（如果你要展示组织&#x2F;私有仓库信息）</li>
+<li><code>workflow</code></li>
+</ul>
+</li>
+<li>复制生成的 token（格式是 <code>ghp_XXXXXXXXX...</code>）</li>
+</ul>
+<h4 id="添加到仓库-Secrets"><a href="#添加到仓库-Secrets" class="headerlink" title="添加到仓库 Secrets"></a><strong>添加到仓库 Secrets</strong></h4><ul>
+<li>打开你的仓库 <code>wenjiew-astro/wenjiew-astro</code></li>
+<li>Settings → Secrets and variables → Actions → New repository secret</li>
+<li>Name 填：<code>GH_TOKEN</code></li>
+<li>Value 填：刚才生成的 PAT</li>
+</ul>
+<p>你需要把这个PAT放到如下几个不同的名字中去：</p>
+<ol>
+<li><code>GH_TOKEN</code></li>
+<li><code>ACCESS_TOKEN</code></li>
+<li><code>METRICS_TOKEN</code></li>
+</ol>
+<blockquote>
+<p>你可能会有疑问，为什么要新建这么多Token，只用一个不行吗？答案是，可以！But，如果你这里只建一个Token的话，那你就需要去改那好几个yml文件，如果你想改的话当然没问题，你可以去改。</p>
+</blockquote>
+<h4 id="还有一个小点"><a href="#还有一个小点" class="headerlink" title="还有一个小点"></a>还有一个小点</h4><p>你会在 <strong>README.md</strong> 文件最后看到这样一句话：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;img width=&quot;120%&quot; src=&quot;https://repobeats.axiom.co/api/embed/7aa7311e6885fc4b499b17d5c47c0cd5cbca9d4d.svg&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这一行是 <strong><a target="_blank" rel="noopener" href="https://repobeats.axiom.co/">Repobeats</a></strong> 服务，自动生成一张仓库贡献的动态分析图。比如提交数、活跃度、PR、issue 等，会显示成五颜六色的曲线图。这个 <strong>Repobeats</strong> 图，它并不是记录你的「整个 GitHub 账号」，而是记录<strong>某一个具体仓库</strong>的活动情况。</p>
+<p>你只需要在 <strong><a target="_blank" rel="noopener" href="https://repobeats.axiom.co/">Repobeats</a></strong>  这个网页中登录你的 Github 账号，然后选择需要记录的仓库，就会有一句这样的话：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Add the following to your README.md to embed Repobeats</span><br><span class="line"></span><br><span class="line">![Alt](https://repobeats.axiom.co/api/embed/7aa7311e6885fc4b499b17d5c47c0cd5cbca9d4d.svg &quot;Repobeats analytics image&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>你只需要把这里面的网址 替换掉就行了。这个时候基本就大功告成了。</p>
+<p>如果你还有一个博客，那你就需要配置一下 <a target="_blank" rel="noopener" href="https://github.com/wenjiew-astro/wenjiew-astro/blob/main/.github/workflows/blog.yml">blog.yml</a> 这个文件。</p>
+<p>我的博客是 <a href="https://wenjiew-astro.github.io/">Wenjie Wang</a>，是部署在 Github 上面的，下面是 GPT 给我写的教程，但是我现在没有那个电脑，之后尝试了再更新。</p>
+<p>+++</p>
+<p>明白～Hexo 默认不自带 RSS，需要先装插件来“产出”一个 feed，然后再用那个 GitHub Action 把文章列表写进 README。</p>
+<p>下面按顺序来：</p>
+<hr>
+<h2 id="1-给-Hexo-生成-RSS（一次性设置）"><a href="#1-给-Hexo-生成-RSS（一次性设置）" class="headerlink" title="1) 给 Hexo 生成 RSS（一次性设置）"></a>1) 给 Hexo 生成 RSS（一次性设置）</h2><p>在你的 Hexo 博客目录（有 <code>source/</code>、<code>themes/</code> 的那个根目录）里执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+
+<p>然后在 <strong>站点配置文件</strong> <code>_config.yml</code>（根目录的，不是主题里的）加入&#x2F;修改如下：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 站点基本信息（确保正确，影响 feed 的链接）</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://wenjiew-astro.github.io</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># RSS 配置（hexo-generator-feed）</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">atom</span>            <span class="comment"># 可选 atom | rss2 | both</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">atom.xml</span>        <span class="comment"># 生成文件名（常见：atom.xml 或 rss2.xml）</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10</span>             <span class="comment"># 列出最近 N 篇</span></span><br><span class="line">  <span class="attr">hub:</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span>         <span class="comment"># 是否包含全文（true/false）</span></span><br></pre></td></tr></table></figure>
+
+<p>生成并预览看看是否有 <code>atom.xml</code>：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器访问本地 <code>http://localhost:4000/atom.xml</code> 能看到 XML 就说明成功了。</p>
+<p>部署后，你的线上地址就会是（按上面配置）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://wenjiew-astro.github.io/atom.xml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果你的站点是 <strong>项目页</strong>（repo 不是 <code>wenjiew-astro.github.io</code> 而是别的），那线上路径会是：<br> <code>https://wenjiew-astro.github.io/&lt;repo-name&gt;/atom.xml</code>。<br> 你的是用户页（域名就是用户名.github.io），所以直接 <code>/atom.xml</code>。</p>
+</blockquote>
+<hr>
+<h2 id="2-改-GitHub-Actions（把-RSS-地址换成你的）"><a href="#2-改-GitHub-Actions（把-RSS-地址换成你的）" class="headerlink" title="2) 改 GitHub Actions（把 RSS 地址换成你的）"></a>2) 改 GitHub Actions（把 RSS 地址换成你的）</h2><p>把你现有的 workflow 改成这样（只改 url 即可；其余保留）：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Recent</span> <span class="string">Blog</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">schedule:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">cron:</span> <span class="string">&quot;0 0 * * *&quot;</span>   <span class="comment"># 每天 00:00 UTC 跑一次</span></span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">generate-readme-feed</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">sarisia/actions-readme-feed@v1</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">url:</span> <span class="string">&quot;https://wenjiew-astro.github.io/atom.xml&quot;</span>  <span class="comment"># ← 用你刚生成的 feed</span></span><br><span class="line">          <span class="attr">file:</span> <span class="string">&quot;README.md&quot;</span></span><br><span class="line">          <span class="comment"># 可选：最多显示 5 篇、每项的格式</span></span><br><span class="line">          <span class="attr">max_item:</span> <span class="number">5</span></span><br><span class="line">          <span class="attr">format:</span> <span class="string">&quot;- &lt;a href=&#x27;$&#123;link&#125;&#x27;&gt;$&#123;title&#125;&lt;/a&gt; &lt;sub&gt;($&#123;pubDate&#125;)&lt;/sub&gt;&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">sarisia/actions-commit@master</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-在-README-放占位符"><a href="#3-在-README-放占位符" class="headerlink" title="3) 在 README 放占位符"></a>3) 在 README 放占位符</h2><p>在 <code>README.md</code> 里加：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 📝 最近更新</span></span><br><span class="line">&lt;!--START<span class="emphasis">_SECTION:feed--&gt;</span></span><br><span class="line"><span class="emphasis">&lt;!--END_</span>SECTION:feed--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Action 每次跑，会自动把最新文章列表填充在这两行之间。</p>
+<hr>
+<h2 id="常见问题排查"><a href="#常见问题排查" class="headerlink" title="常见问题排查"></a>常见问题排查</h2><ul>
+<li><strong>访问 404</strong>：确认最终线上地址是否是 <code>/atom.xml</code>（或你设置的 <code>path</code>）。用户页是根目录；项目页要带仓库名。</li>
+<li><strong>feed.xml &#x2F; rss.xml 打不开</strong>：你没有装插件或 <code>feed:</code> 节没配置；检查 <code>_config.yml</code> 是否在<strong>站点根</strong>而不是主题配置里。</li>
+<li><strong>时区&#x2F;时间</strong>：Hexo 默认 UTC，想显示北京时间可以在 README 的格式里自己处理，或保持简单用 <code>$&#123;pubDate&#125;</code>。</li>
+<li><strong>缓存</strong>：GitHub 对 README 图片&#x2F;内容有缓存，第一次更新后稍等一会儿或点进 Actions 的运行日志确认是否写入成功。</li>
+</ul>
+<hr>
+<p>如果你把 <code>_config.yml</code>（相关几行）贴我，我可以帮你确认最终线上 feed 的准确 URL，并把 workflow 的 <code>format</code> 再美化一下（比如只显示日期不含时区、加 Emoji 等）。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://wenjiew-astro.github.io">Wenjie Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://wenjiew-astro.github.io/2025/08/22/Github%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/">https://wenjiew-astro.github.io/2025/08/22/Github美化过程记录/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://wenjiew-astro.github.io" target="_blank">Wenjie Wang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Github%E4%B8%BB%E9%A1%B5/">Github主页</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a></div><div class="post-share"><div class="social-share" data-image="/img/cover/17226422133902720.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/08/16/hexo%E5%86%99%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/" title="Hexo 写博客指南"><img class="cover" src="/img/cover/17169476570893696.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hexo 写博客指南</div></div><div class="info-2"><div class="info-item-1">Hexo 写博客指南这是一份面向新手和进阶用户的 Hexo 写作指南，整合了常见问题与一些经验。内容涵盖目录结构、文章写作、分类标签管理、草稿发布以及部署方式等。  1. Hexo 目录结构一个典型的 Hexo 博客目录：  .├── _config.yml        # 博客全局配置文件├── scaffolds&#x2F;         # 文章模板├── source&#x2F;            # 存放页面、文章、静态资源│   ├── _posts&#x2F;        # 文章（Markdown 文件）│   ├── about&#x2F;         # 独立页面：关于我│   ├── categories&#x2F;    # 独立页面：分类│   ├── tags&#x2F;          # 独立页面：标签│   └── …            # 其他页面，比如 links、music├── themes&#x2F;            # 主题目录（如 butterfly）├── public&#x2F;            ...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/08/16/hexo+github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/" title="hexo+github 搭建个人主页"><img class="cover" src="/img/cover/16777130876849536.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-16</div><div class="info-item-2">hexo+github 搭建个人主页</div></div><div class="info-2"><div class="info-item-1">hexo+github 搭建个人主页1.配置gitPS C:\Users\44660\Desktop&gt; git config --global user.name &quot;wenjie-astro&quot; # user_name 填入 GitHub 用户名PS C:\Users\44660\Desktop&gt; git config --global user.email &quot;446601097@qq.com&quot; # user_email 填入 GitHub 注册的邮箱  2.安装Node.js安装 Node.js 会包含环境变量以及 npm 的安装，安装后，可以在命令行输入如下命令检测 Node.js 是否安装成功： 第一个命令： node -v  这个命令，在 nodejs 安装成功的情况下会显示 nodejs 的版本号。 第二个命令： npm -v  这个命令，在 nodejs 安装成功的情况下会显示 npm 的版本号。  注意：这里可能会有错误  PS C:\Users\44660\Desktop&gt; npm -vnpm : 无法加载文...</div></div></div></a><a class="pagination-related" href="/2025/08/16/hexo%E5%86%99%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/" title="Hexo 写博客指南"><img class="cover" src="/img/cover/17169476570893696.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-16</div><div class="info-item-2">Hexo 写博客指南</div></div><div class="info-2"><div class="info-item-1">Hexo 写博客指南这是一份面向新手和进阶用户的 Hexo 写作指南，整合了常见问题与一些经验。内容涵盖目录结构、文章写作、分类标签管理、草稿发布以及部署方式等。  1. Hexo 目录结构一个典型的 Hexo 博客目录：  .├── _config.yml        # 博客全局配置文件├── scaffolds&#x2F;         # 文章模板├── source&#x2F;            # 存放页面、文章、静态资源│   ├── _posts&#x2F;        # 文章（Markdown 文件）│   ├── about&#x2F;         # 独立页面：关于我│   ├── categories&#x2F;    # 独立页面：分类│   ├── tags&#x2F;          # 独立页面：标签│   └── …            # 其他页面，比如 links、music├── themes&#x2F;            # 主题目录（如 butterfly）├── public&#x2F;            ...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/20250713102251.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Wenjie Wang</div><div class="author-info-description">海是倒过来的天</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wenjiew-astro"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/wenjiew-astro" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:wenjiew001@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://blog.csdn.net/m0_66607857" target="_blank" title="CSDN"><i class="fa fa-book-open"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is Wenjie Wang's Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Github%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95"><span class="toc-text">Github美化过程记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A6%96%E5%85%88%E8%A6%81%E6%89%BE%E5%88%B0%E4%B8%80%E4%B8%AA%E6%88%91%E4%BB%AC%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%BB%E9%A1%B5"><span class="toc-text">1.首先要找到一个我们喜欢的主页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%88%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98-%E2%80%94-token%E9%97%AE%E9%A2%98"><span class="toc-text">配置过程中我遇到的问题 — token问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WakaTime-Token"><span class="toc-text">WakaTime Token</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%93%E5%BA%93"><span class="toc-text">仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%A0%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">你的代码编辑器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%A7%8DAction%E7%9A%84Token"><span class="toc-text">各种Action的Token</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90-PAT"><span class="toc-text">生成 PAT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%BB%93%E5%BA%93-Secrets"><span class="toc-text">添加到仓库 Secrets</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%98%E6%9C%89%E4%B8%80%E4%B8%AA%E5%B0%8F%E7%82%B9"><span class="toc-text">还有一个小点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%BB%99-Hexo-%E7%94%9F%E6%88%90-RSS%EF%BC%88%E4%B8%80%E6%AC%A1%E6%80%A7%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="toc-text">1) 给 Hexo 生成 RSS（一次性设置）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%94%B9-GitHub-Actions%EF%BC%88%E6%8A%8A-RSS-%E5%9C%B0%E5%9D%80%E6%8D%A2%E6%88%90%E4%BD%A0%E7%9A%84%EF%BC%89"><span class="toc-text">2) 改 GitHub Actions（把 RSS 地址换成你的）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9C%A8-README-%E6%94%BE%E5%8D%A0%E4%BD%8D%E7%AC%A6"><span class="toc-text">3) 在 README 放占位符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5"><span class="toc-text">常见问题排查</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/22/Github%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" title="Github美化过程记录"><img src="/img/cover/17226422133902720.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Github美化过程记录"/></a><div class="content"><a class="title" href="/2025/08/22/Github%E7%BE%8E%E5%8C%96%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" title="Github美化过程记录">Github美化过程记录</a><time datetime="2025-08-21T16:00:00.000Z" title="发表于 2025-08-22 00:00:00">2025-08-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/16/hexo%E5%86%99%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/" title="Hexo 写博客指南"><img src="/img/cover/17169476570893696.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo 写博客指南"/></a><div class="content"><a class="title" href="/2025/08/16/hexo%E5%86%99%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/" title="Hexo 写博客指南">Hexo 写博客指南</a><time datetime="2025-08-16T07:00:00.000Z" title="发表于 2025-08-16 15:00:00">2025-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/08/16/hexo+github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/" title="hexo+github 搭建个人主页"><img src="/img/cover/16777130876849536.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo+github 搭建个人主页"/></a><div class="content"><a class="title" href="/2025/08/16/hexo+github%20%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/" title="hexo+github 搭建个人主页">hexo+github 搭建个人主页</a><time datetime="2025-08-16T02:00:00.000Z" title="发表于 2025-08-16 10:00:00">2025-08-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/07/12/hello-world/" title="Hello World"><img src="/img/cover/17261277366635904.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2025/07/12/hello-world/" title="Hello World">Hello World</a><time datetime="2025-07-11T16:00:00.000Z" title="发表于 2025-07-12 00:00:00">2025-07-12</time></div></div></div></div></div><div class="card-widget card-map"><div class="card-content"><div class="item-headline"><i class="fa fa-globe-asia" aria-hidden="true"></i><span>访客地图</span></div><script id="clstr_globe" type="text/javascript" defer="defer" src="//clustrmaps.com/globe.js?d=hWY0rcgLrsJtJiWcBpZUiTIjqXf-fmEyBJCo2rCha8I"></script></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Wenjie Wang</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.2</a></span></div><div class="footer_custom_text"><span id="realtime_duration"></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'wenjiew-astro/wenjiew-astro.github.io',
+      'data-repo-id': '',
+      'data-category-id': '',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><div id="jsi-flying-fish-container" class="fish-container"></div><script defer src="/js/fish-renderer.js"></script><script> document.addEventListener('DOMContentLoaded', () => { window.FISH_RENDERER && window.FISH_RENDERER.init(); }); document.addEventListener('pjax:complete',     () => { window.FISH_RENDERER && window.FISH_RENDERER.init(); }); </script><canvas id="mouse-stars"></canvas><script defer src="/js/mouse-stars.js"></script><script> document.addEventListener('DOMContentLoaded',  () => { window.MOUSE_STARS && window.MOUSE_STARS.init(); }); document.addEventListener('pjax:complete',     () => { window.MOUSE_STARS && window.MOUSE_STARS.init(); }); </script><script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script><script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/plugin/duration.min.js"></script><script src="/scripts/realtime.js"></script><script src="https://cdn.staticfile.org/jquery/3.6.4/jquery.min.js"></script><script src="https://cdn.staticfile.org/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script><script src="https://gcore.jsdelivr.net/npm/minigrid@3.1.1/dist/minigrid.min.js"></script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><script defer src="/js/gallery-index.js"></script><script defer src="/js/gallery-group.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="今天想搜点什么？" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
